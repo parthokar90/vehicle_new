@@ -12,7 +12,7 @@ use App\Models\Designation;
   
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasRoles;
+    use Notifiable, HasRoles;
 
     public $timestamps = true;
   
