@@ -4,12 +4,12 @@
     <!-- begin:: Aside -->
     <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
         <div class="kt-aside__brand-logo">
-            <a href="{{url('dashboard/d/dashboard')}}">
-                @if(Auth::user()->company_light_logo)
-                <img src="{{asset('public/uploads/user/logos/'.Auth::user()->company_light_logo)}}" alt="Logo">
-                @else
-                <img alt="Logo" src="{{asset('assets/media/logos/crm-logo-2.png')}}" />
-                @endif
+            <a href="<?php echo e(url('dashboard/d/dashboard')); ?>">
+                <?php if(Auth::user()->company_light_logo): ?>
+                <img src="<?php echo e(asset('public/uploads/user/logos/'.Auth::user()->company_light_logo)); ?>" alt="Logo">
+                <?php else: ?>
+                <img alt="Logo" src="<?php echo e(asset('assets/media/logos/crm-logo-2.png')); ?>" />
+                <?php endif; ?>
             </a>
         </div>
         <div class="kt-aside__brand-tools">
@@ -42,7 +42,7 @@
         <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
             <ul class="kt-menu__nav ">
                 <li class="kt-menu__item  " aria-haspopup="true">
-                    <a href="{{ url('dashboard/dashboard')}}" class="kt-menu__link  vms_menu_item" id="dashboard" data-rel="dashboard">
+                    <a href="<?php echo e(url('dashboard/dashboard')); ?>" class="kt-menu__link  vms_menu_item" id="dashboard" data-rel="dashboard">
                         <span class="kt-menu__link-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -60,7 +60,7 @@
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
                 <!-- <li class="kt-menu__item kt-menu__item--active" aria-haspopup="true">
-                    <a href="{{ url('dashboard/d/dashboard')}}" class="kt-menu__link  vms_menu_item" id="driver" data-rel="driver">
+                    <a href="<?php echo e(url('dashboard/d/dashboard')); ?>" class="kt-menu__link  vms_menu_item" id="driver" data-rel="driver">
                         <span class="kt-menu__link-icon">
                             <i class="fas fa-user"></i>
                         </span>
@@ -68,7 +68,7 @@
                     </a>
                 </li> -->
                 <li class="kt-menu__item " aria-haspopup="true">
-                    <a href="{{ url('dashboard/d/single_vehicle')}}" class="kt-menu__link  vms_menu_item" id="single_vehicle" data-rel="single_vehicle">
+                    <a href="<?php echo e(url('dashboard/d/single_vehicle')); ?>" class="kt-menu__link  vms_menu_item" id="single_vehicle" data-rel="single_vehicle">
                         <span class="kt-menu__link-icon">
                             <i class="fas fa-car"></i>
                         </span>
@@ -92,20 +92,20 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vehicle_add')}}" class="kt-menu__link  vms_menu_item" id="vehicle_add" data-rel="vehicle_add">
+                                <a href="<?php echo e(url('dashboard/d/vehicle_add')); ?>" class="kt-menu__link  vms_menu_item" id="vehicle_add" data-rel="vehicle_add">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Add vehicle</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vehicle')}}" class="kt-menu__link  vms_menu_item" id="vehicle" data-rel="vehicle">
+                                <a href="<?php echo e(url('dashboard/d/vehicle')); ?>" class="kt-menu__link  vms_menu_item" id="vehicle" data-rel="vehicle">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Vehicle list</span>
                                 </a>
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vehicle_group')}}" class="kt-menu__link  vms_menu_item" id="vehicle_group" data-rel="vehicle_group">
+                                <a href="<?php echo e(url('dashboard/d/vehicle_group')); ?>" class="kt-menu__link  vms_menu_item" id="vehicle_group" data-rel="vehicle_group">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Vehicle group</span>
                                 </a>
@@ -130,13 +130,13 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vehicle_staff_add')}}" class="kt-menu__link  vms_menu_item" id="vehicle_staff_add" data-rel="vehicle_staff_add">
+                                <a href="<?php echo e(url('dashboard/d/vehicle_staff_add')); ?>" class="kt-menu__link  vms_menu_item" id="vehicle_staff_add" data-rel="vehicle_staff_add">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Add vehicle staff</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vehicle_staff')}}" class="kt-menu__link  vms_menu_item" id="vehicle_staff" data-rel="vehicle_staff">
+                                <a href="<?php echo e(url('dashboard/d/vehicle_staff')); ?>" class="kt-menu__link  vms_menu_item" id="vehicle_staff" data-rel="vehicle_staff">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Vehicle staff list</span>
                                 </a>
@@ -161,19 +161,19 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vendor_add')}}" class="kt-menu__link  vms_menu_item" id="vendor_add" data-rel="vendor_add">
+                                <a href="<?php echo e(url('dashboard/d/vendor_add')); ?>" class="kt-menu__link  vms_menu_item" id="vendor_add" data-rel="vendor_add">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Add vendor</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vendor_manage')}}" class="kt-menu__link  vms_menu_item" id="vendor_manage" data-rel="vendor_manage">
+                                <a href="<?php echo e(url('dashboard/d/vendor_manage')); ?>" class="kt-menu__link  vms_menu_item" id="vendor_manage" data-rel="vendor_manage">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Manage vendor</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vendor_bill_view')}}" class="kt-menu__link  vms_menu_item" id="customer" data-rel="vendor_bill_view">
+                                <a href="<?php echo e(url('dashboard/d/vendor_bill_view')); ?>" class="kt-menu__link  vms_menu_item" id="customer" data-rel="vendor_bill_view">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Vendor Bill View</span>
                                 </a>
@@ -198,19 +198,19 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/customer_add')}}" class="kt-menu__link  vms_menu_item" id="customer_add" data-rel="customer_add">
+                                <a href="<?php echo e(url('dashboard/d/customer_add')); ?>" class="kt-menu__link  vms_menu_item" id="customer_add" data-rel="customer_add">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Add customer</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/customer')}}" class="kt-menu__link  vms_menu_item" id="customer" data-rel="customer">
+                                <a href="<?php echo e(url('dashboard/d/customer')); ?>" class="kt-menu__link  vms_menu_item" id="customer" data-rel="customer">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Customer list</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/customer_bill_view')}}" class="kt-menu__link  vms_menu_item" id="customer" data-rel="customer_bill_view">
+                                <a href="<?php echo e(url('dashboard/d/customer_bill_view')); ?>" class="kt-menu__link  vms_menu_item" id="customer" data-rel="customer_bill_view">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Customer Bill View</span>
                                 </a>
@@ -235,14 +235,14 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/dashboard')}}" class="kt-menu__link  vms_menu_item" id="create_customer"
+                                <a href="<?php echo e(url('dashboard/d/dashboard')); ?>" class="kt-menu__link  vms_menu_item" id="create_customer"
                                     data-rel="create_customer">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Add customer</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/dashboard')}}" class="kt-menu__link  vms_menu_item" id="customer_list"
+                                <a href="<?php echo e(url('dashboard/d/dashboard')); ?>" class="kt-menu__link  vms_menu_item" id="customer_list"
                                     data-rel="customer_list">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Customer list</span>
@@ -268,25 +268,25 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vehicle_wise_summary')}}" class="kt-menu__link  vms_menu_item" id="vehicle_wise_summary" data-rel="vehicle_wise_summary">
+                                <a href="<?php echo e(url('dashboard/d/vehicle_wise_summary')); ?>" class="kt-menu__link  vms_menu_item" id="vehicle_wise_summary" data-rel="vehicle_wise_summary">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Vehicle wise summary</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vehicle_wise_profit')}}" class="kt-menu__link  vms_menu_item" id="vehicle_wise_profit" data-rel="vehicle_wise_profit">
+                                <a href="<?php echo e(url('dashboard/d/vehicle_wise_profit')); ?>" class="kt-menu__link  vms_menu_item" id="vehicle_wise_profit" data-rel="vehicle_wise_profit">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Vehicle wise profit</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vehicle_wise_report')}}" class="kt-menu__link  vms_menu_item" id="vehicle_wise_report" data-rel="vehicle_wise_report">
+                                <a href="<?php echo e(url('dashboard/d/vehicle_wise_report')); ?>" class="kt-menu__link  vms_menu_item" id="vehicle_wise_report" data-rel="vehicle_wise_report">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Vehicle wise report</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/transport_360_view')}}" class="kt-menu__link  vms_menu_item" id="transport_360_view" data-rel="transport_360_view">
+                                <a href="<?php echo e(url('dashboard/d/transport_360_view')); ?>" class="kt-menu__link  vms_menu_item" id="transport_360_view" data-rel="transport_360_view">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Transport 360 view</span>
                                 </a>
@@ -311,31 +311,31 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/trip_add')}}" class="kt-menu__link  vms_menu_item" id="trip_add" data-rel="trip_add">
+                                <a href="<?php echo e(url('dashboard/d/trip_add')); ?>" class="kt-menu__link  vms_menu_item" id="trip_add" data-rel="trip_add">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Add trip</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/trip')}}" class="kt-menu__link  vms_menu_item" id="trip" data-rel="trip">
+                                <a href="<?php echo e(url('dashboard/d/trip')); ?>" class="kt-menu__link  vms_menu_item" id="trip" data-rel="trip">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Trip list</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/trip_schedule')}}" class="kt-menu__link  vms_menu_item" id="trip_schedule" data-rel="trip_schedule">
+                                <a href="<?php echo e(url('dashboard/d/trip_schedule')); ?>" class="kt-menu__link  vms_menu_item" id="trip_schedule" data-rel="trip_schedule">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Trip schedule calender</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/trip_running')}}" class="kt-menu__link  vms_menu_item" id="trip_running" data-rel="trip_running">
+                                <a href="<?php echo e(url('dashboard/d/trip_running')); ?>" class="kt-menu__link  vms_menu_item" id="trip_running" data-rel="trip_running">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Running trip</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/trip_complete')}}" class="kt-menu__link  vms_menu_item" id="trip_complete" data-rel="trip_complete">
+                                <a href="<?php echo e(url('dashboard/d/trip_complete')); ?>" class="kt-menu__link  vms_menu_item" id="trip_complete" data-rel="trip_complete">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Complete trip</span>
                                 </a>
@@ -360,19 +360,19 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/parts_add')}}" class="kt-menu__link  vms_menu_item" id="parts_add" data-rel="parts_add">
+                                <a href="<?php echo e(url('dashboard/d/parts_add')); ?>" class="kt-menu__link  vms_menu_item" id="parts_add" data-rel="parts_add">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Add parts</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/parts_manage')}}" class="kt-menu__link  vms_menu_item" id="parts_manage" data-rel="parts_manage">
+                                <a href="<?php echo e(url('dashboard/d/parts_manage')); ?>" class="kt-menu__link  vms_menu_item" id="parts_manage" data-rel="parts_manage">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Manage parts</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/parts_categories')}}" class="kt-menu__link  vms_menu_item" id="parts_categories" data-rel="parts_categories">
+                                <a href="<?php echo e(url('dashboard/d/parts_categories')); ?>" class="kt-menu__link  vms_menu_item" id="parts_categories" data-rel="parts_categories">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Manage parts categories</span>
                                 </a>
@@ -397,25 +397,25 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/fuel_log')}}" class="kt-menu__link  vms_menu_item" id="fuel_log" data-rel="fuel_log">
+                                <a href="<?php echo e(url('dashboard/d/fuel_log')); ?>" class="kt-menu__link  vms_menu_item" id="fuel_log" data-rel="fuel_log">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Fuel Log</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/all_expense_log')}}" class="kt-menu__link  vms_menu_item" id="all_expense_log" data-rel="all_expense_log">
+                                <a href="<?php echo e(url('dashboard/d/all_expense_log')); ?>" class="kt-menu__link  vms_menu_item" id="all_expense_log" data-rel="all_expense_log">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">All Expense Log</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/expense_group')}}" class="kt-menu__link  vms_menu_item" id="expense_group" data-rel="expense_group">
+                                <a href="<?php echo e(url('dashboard/d/expense_group')); ?>" class="kt-menu__link  vms_menu_item" id="expense_group" data-rel="expense_group">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Expense Group</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/expense_type')}}" class="kt-menu__link  vms_menu_item" id="expense_type" data-rel="expense_type">
+                                <a href="<?php echo e(url('dashboard/d/expense_type')); ?>" class="kt-menu__link  vms_menu_item" id="expense_type" data-rel="expense_type">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Expense Type</span>
                                 </a>
@@ -440,13 +440,13 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/maintenance')}}" class="kt-menu__link  vms_menu_item" id="maintenance" data-rel="maintenance">
+                                <a href="<?php echo e(url('dashboard/d/maintenance')); ?>" class="kt-menu__link  vms_menu_item" id="maintenance" data-rel="maintenance">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Maintenance list</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/maintenance_type')}}" class="kt-menu__link  vms_menu_item" id="maintenance_type" data-rel="maintenance_type">
+                                <a href="<?php echo e(url('dashboard/d/maintenance_type')); ?>" class="kt-menu__link  vms_menu_item" id="maintenance_type" data-rel="maintenance_type">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Maintenance type</span>
                                 </a>
@@ -472,13 +472,13 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/document')}}" class="kt-menu__link  vms_menu_item" id="document" data-rel="document">
+                                <a href="<?php echo e(url('dashboard/d/document')); ?>" class="kt-menu__link  vms_menu_item" id="document" data-rel="document">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Document list</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/document_type')}}" class="kt-menu__link  vms_menu_item" id="document_type" data-rel="document_type">
+                                <a href="<?php echo e(url('dashboard/d/document_type')); ?>" class="kt-menu__link  vms_menu_item" id="document_type" data-rel="document_type">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Document type</span>
                                 </a>
@@ -503,27 +503,27 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/user')}}" class="kt-menu__link  vms_menu_item" id="user" data-rel="user">
+                                <a href="<?php echo e(url('dashboard/user')); ?>" class="kt-menu__link  vms_menu_item" id="user" data-rel="user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">User List</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('department.index')}}" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
+                                <a href="<?php echo e(route('department.index')); ?>" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">User role</span>
                                 </a>
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('permit.index')}}" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
+                                <a href="<?php echo e(route('permit.index')); ?>" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">User permission</span>
                                 </a>
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('assign-permit.create')}}" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
+                                <a href="<?php echo e(route('assign-permit.create')); ?>" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Assign permission</span>
                                 </a>
@@ -549,21 +549,21 @@
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/complain_add')}}" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
+                                <a href="<?php echo e(url('dashboard/d/complain_add')); ?>" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Add Complain</span>
                                 </a>
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/complain')}}" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
+                                <a href="<?php echo e(url('dashboard/d/complain')); ?>" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Complain List</span>
                                 </a>
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/complain_type')}}" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
+                                <a href="<?php echo e(url('dashboard/d/complain_type')); ?>" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Complain Type</span>
                                 </a>
@@ -589,7 +589,7 @@
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/user_login_history')}}" class="kt-menu__link  vms_menu_item" id="user_login_history" data-rel="user_login_history">
+                                <a href="<?php echo e(url('dashboard/user_login_history')); ?>" class="kt-menu__link  vms_menu_item" id="user_login_history" data-rel="user_login_history">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">User login history</span>
                                 </a>
@@ -616,25 +616,25 @@
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/inspection_category')}}" class="kt-menu__link  vms_menu_item" id="inspection_category" data-rel="inspection_category">
+                                <a href="<?php echo e(url('dashboard/d/inspection_category')); ?>" class="kt-menu__link  vms_menu_item" id="inspection_category" data-rel="inspection_category">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Inspection Category</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/inspection_items')}}" class="kt-menu__link  vms_menu_item" id="inspection_items" data-rel="inspection_items">
+                                <a href="<?php echo e(url('dashboard/d/inspection_items')); ?>" class="kt-menu__link  vms_menu_item" id="inspection_items" data-rel="inspection_items">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Inspection Items</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/vehicle_inspection')}}" class="kt-menu__link  vms_menu_item" id="vehicle_inspection" data-rel="vehicle_inspection">
+                                <a href="<?php echo e(url('dashboard/d/vehicle_inspection')); ?>" class="kt-menu__link  vms_menu_item" id="vehicle_inspection" data-rel="vehicle_inspection">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Vehicle Inspection</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/inspection_logs')}}" class="kt-menu__link  vms_menu_item" id="inspection_logs" data-rel="inspection_logs">
+                                <a href="<?php echo e(url('dashboard/d/inspection_logs')); ?>" class="kt-menu__link  vms_menu_item" id="inspection_logs" data-rel="inspection_logs">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Inspection Logs</span>
                                 </a>
@@ -660,13 +660,13 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/purchase')}}" class="kt-menu__link  vms_menu_item" id="purchase" data-rel="purchase">
+                                <a href="<?php echo e(url('dashboard/d/purchase')); ?>" class="kt-menu__link  vms_menu_item" id="purchase" data-rel="purchase">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Purchase List</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/purchase_add')}}" class="kt-menu__link  vms_menu_item" id="purchase" data-rel="purchase">
+                                <a href="<?php echo e(url('dashboard/d/purchase_add')); ?>" class="kt-menu__link  vms_menu_item" id="purchase" data-rel="purchase">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Purchase Add</span>
                                 </a>
@@ -691,13 +691,13 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/invoice')}}" class="kt-menu__link  vms_menu_item" id="purchase" data-rel="purchase">
+                                <a href="<?php echo e(url('dashboard/d/invoice')); ?>" class="kt-menu__link  vms_menu_item" id="purchase" data-rel="purchase">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Invoice List</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/invoice_add')}}" class="kt-menu__link  vms_menu_item" id="purchase" data-rel="purchase">
+                                <a href="<?php echo e(url('dashboard/d/invoice_add')); ?>" class="kt-menu__link  vms_menu_item" id="purchase" data-rel="purchase">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Invoice Add</span>
                                 </a>
@@ -722,13 +722,13 @@
                                 </span>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/')}}" class="kt-menu__link  vms_menu_item" id="profile" data-rel="profile">
+                                <a href="<?php echo e(url('dashboard/d/')); ?>" class="kt-menu__link  vms_menu_item" id="profile" data-rel="profile">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">SMS</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/d/')}}" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
+                                <a href="<?php echo e(url('dashboard/d/')); ?>" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Mobile recharge</span>
                                 </a>
@@ -753,25 +753,25 @@
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/accounts/account_setup')}}" class="kt-menu__link  vms_menu_item" id="account_setup" data-rel="account_setup">
+                                <a href="<?php echo e(url('dashboard/accounts/account_setup')); ?>" class="kt-menu__link  vms_menu_item" id="account_setup" data-rel="account_setup">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Accounts setup</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/accounts/deposit')}}" class="kt-menu__link  vms_menu_item" id="deposit" data-rel="deposit">
+                                <a href="<?php echo e(url('dashboard/accounts/deposit')); ?>" class="kt-menu__link  vms_menu_item" id="deposit" data-rel="deposit">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Deposit list</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/accounts/expense')}}" class="kt-menu__link  vms_menu_item" id="expense" data-rel="expense">
+                                <a href="<?php echo e(url('dashboard/accounts/expense')); ?>" class="kt-menu__link  vms_menu_item" id="expense" data-rel="expense">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Expense list</span>
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/accounts/transfer')}}" class="kt-menu__link  vms_menu_item" id="transfer" data-rel="transfer">
+                                <a href="<?php echo e(url('dashboard/accounts/transfer')); ?>" class="kt-menu__link  vms_menu_item" id="transfer" data-rel="transfer">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Transfer list</span>
                                 </a>
@@ -785,13 +785,13 @@
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item " aria-haspopup="true">
-                                            <a href="{{ url('dashboard/accounts/ledger_report')}}" class="kt-menu__link ">
+                                            <a href="<?php echo e(url('dashboard/accounts/ledger_report')); ?>" class="kt-menu__link ">
                                                 <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                                 <span class="kt-menu__link-text">Ledger report</span>
                                             </a>
                                         </li>
                                         <li class="kt-menu__item " aria-haspopup="true">
-                                            <a href="{{ url('dashboard/accounts/regular_balance_sheet')}}" class="kt-menu__link ">
+                                            <a href="<?php echo e(url('dashboard/accounts/regular_balance_sheet')); ?>" class="kt-menu__link ">
                                                 <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                                 <span class="kt-menu__link-text">Regular balance sheet</span>
                                             </a>
@@ -819,7 +819,7 @@
                                 </span>
                             </li>
                             <!-- <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/setting/master_setting')}}" class="kt-menu__link  vms_menu_item" id="master_setting" data-rel="master_setting">
+                                <a href="<?php echo e(url('dashboard/setting/master_setting')); ?>" class="kt-menu__link  vms_menu_item" id="master_setting" data-rel="master_setting">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>
@@ -827,7 +827,7 @@
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/setting/master_setting_type')}}" class="kt-menu__link  vms_menu_item" id="master_setting_type" data-rel="master_setting_type">
+                                <a href="<?php echo e(url('dashboard/setting/master_setting_type')); ?>" class="kt-menu__link  vms_menu_item" id="master_setting_type" data-rel="master_setting_type">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>
@@ -835,7 +835,7 @@
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/setting/business_setting')}}" class="kt-menu__link  vms_menu_item" id="business_setting" data-rel="business_setting">
+                                <a href="<?php echo e(url('dashboard/setting/business_setting')); ?>" class="kt-menu__link  vms_menu_item" id="business_setting" data-rel="business_setting">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>
@@ -843,7 +843,7 @@
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/setting/email_setting')}}" class="kt-menu__link  vms_menu_item" id="email_setting" data-rel="email_setting">
+                                <a href="<?php echo e(url('dashboard/setting/email_setting')); ?>" class="kt-menu__link  vms_menu_item" id="email_setting" data-rel="email_setting">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>
@@ -851,7 +851,7 @@
                                 </a>
                             </li> -->
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/setting/localization')}}" class="kt-menu__link  vms_menu_item" id="localization" data-rel="localization">
+                                <a href="<?php echo e(url('dashboard/setting/localization')); ?>" class="kt-menu__link  vms_menu_item" id="localization" data-rel="localization">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>
@@ -859,7 +859,7 @@
                                 </a>
                             </li>
                             <!-- <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/setting/payment_gateway')}}" class="kt-menu__link  vms_menu_item" id="payment_gateway" data-rel="payment_gateway">
+                                <a href="<?php echo e(url('dashboard/setting/payment_gateway')); ?>" class="kt-menu__link  vms_menu_item" id="payment_gateway" data-rel="payment_gateway">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>
@@ -867,7 +867,7 @@
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/setting/payment_method')}}" class="kt-menu__link  vms_menu_item" id="payment_method" data-rel="payment_method">
+                                <a href="<?php echo e(url('dashboard/setting/payment_method')); ?>" class="kt-menu__link  vms_menu_item" id="payment_method" data-rel="payment_method">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>
@@ -884,4 +884,4 @@
 
     <!-- end:: Aside Menu -->
 
-</div>
+</div><?php /**PATH C:\xampp\htdocs\vehicle_new\resources\views/layouts/enduser/dashboard/sideber.blade.php ENDPATH**/ ?>
