@@ -42,14 +42,7 @@ class VehicleService
                 $id = $row->id;
 
                 return "<button type='button' class='custom-button-class mr-2' onclick='view_data($id)'><i class='fas fa-eye'></i></button>
-
-                <div class='dropdown custom-dreopdown' style='display:inline-block'>
-                    <button class='custom-button-class mr-2' data-toggle='dropdown'><i class='fas fa-cog'></i></button>
-                    <ul class='dropdown-menu custom-dreopdown-menu'>
-                        <li><a class='custom-dreopdown-item' id=$id data-toggle='modal' href='#userModal' onClick='reset_password($id)'>Rest password</a></li>
-                        <li><a class='custom-dreopdown-item' id=$id href='javascript:;' onClick='permission($id)'>Permission</a></li>
-                    </ul>
-                </div>";
+";
             })
             ->editColumn('vehicle_photo', function ($row) {
                 if ($row->vehicle_photo) {

@@ -41,6 +41,7 @@ class VehicleController extends Controller
      */
     public function index(Request $request, $type = null, $id = null)
     {
+
         // dd($type, $id);
         if ($type == "group") {
             $query = $this->my_connection->select("select v.*, vg.name as vg_name, vt.name as vt_name,  ms.name as ownership_name, vs.staff_name, vs.phone as vs_phone, vs.status as vs_status, gs.imei, gs.device_name, gs.unit_status as gs_status, cd.name as cd_name, c.other_value as color_name from vehicles v left join vehicle_groups vg on vg.id = v.vehicle_group_id left join vehicle_types vt on vt.id = v.vehicle_type left join master_settings ms on ms.id = v.vehicle_ownership left join vehicle_staff vs on vs.assigned_vehicle = v.id left join gs_objects gs on gs.id = v.object_id left join combo_data cd on cd.id = gs.unit_status left join combo_data c on c.id = gs.unit_status where v.vehicle_group_id =" . $id . " group by v.id order by v.id desc");

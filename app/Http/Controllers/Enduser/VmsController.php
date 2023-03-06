@@ -52,6 +52,7 @@ class VmsController extends Controller
 
     public function vmsPages($pages = null)
     {
+      
         $data = $this->vmsService->getPagesData($pages);
         if($pages=="trip_add"){
             $data['last_trip_id'] = $this->my_connection->table('tbl_trips')->orderBy('id', 'desc')->first()->id;
@@ -163,6 +164,8 @@ class VmsController extends Controller
 
     public function itemList()
     {
+
+    
         $data = $this->my_connection->select('SELECT i.*,c.category_name FROM tbl_items i left join item_categories c on c.id = i.item_category');
         return Datatables::of($data)
             ->addIndexColumn()

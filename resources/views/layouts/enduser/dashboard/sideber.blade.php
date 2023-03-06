@@ -172,12 +172,12 @@
                                     <span class="kt-menu__link-text">Manage vendor</span>
                                 </a>
                             </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
+                            <!-- <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ url('dashboard/d/vendor_bill_view')}}" class="kt-menu__link  vms_menu_item" id="customer" data-rel="vendor_bill_view">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Vendor Bill View</span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </li>
@@ -209,12 +209,12 @@
                                     <span class="kt-menu__link-text">Customer list</span>
                                 </a>
                             </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
+                            <!-- <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ url('dashboard/d/customer_bill_view')}}" class="kt-menu__link  vms_menu_item" id="customer" data-rel="customer_bill_view">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Customer Bill View</span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </li>
@@ -252,7 +252,7 @@
                     </div>
                 </li> -->
 
-                <li class="kt-menu__item kt-menu__item--submenu" id="report" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                <!-- <li class="kt-menu__item kt-menu__item--submenu" id="report" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                     <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
                         <span class="kt-menu__link-icon">
                             <i class="fas fa-user"></i>
@@ -293,7 +293,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
                 <!-- <li class="kt-menu__item kt-menu__item--submenu" id="trip" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                     <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
@@ -381,7 +381,7 @@
                     </div>
                 </li> -->
 
-                <li class="kt-menu__item kt-menu__item--submenu" id="expense" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                <!-- <li class="kt-menu__item kt-menu__item--submenu" id="expense" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                     <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
                         <span class="kt-menu__link-icon">
                             <i class="fas fa-user"></i>
@@ -422,9 +422,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
-                <li class="kt-menu__item kt-menu__item--submenu" id="maintenance_part" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                <!-- <li class="kt-menu__item kt-menu__item--submenu" id="maintenance_part" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                     <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
                         <span class="kt-menu__link-icon">
                             <i class="fas fa-user"></i>
@@ -485,7 +485,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
                 <li class="kt-menu__item kt-menu__item--submenu" id="manage_account" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                     <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
@@ -502,12 +502,12 @@
                                     <span class="kt-menu__link-text">Manage account</span>
                                 </span>
                             </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
+                            <!-- <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ url('dashboard/user')}}" class="kt-menu__link  vms_menu_item" id="user" data-rel="user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">User List</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ route('department.index')}}" class="kt-menu__link  vms_menu_item" id="admin_user" data-rel="admin_user">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>

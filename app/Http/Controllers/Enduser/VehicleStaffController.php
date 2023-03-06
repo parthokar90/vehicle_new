@@ -83,25 +83,67 @@ class VehicleStaffController extends Controller
         return $data;
     }
 
+    // public function saveData(Request $request, $id)
+    // {
+    //         $validator = $this->vehicleStaffService->storeValidate($request, $id);
+    //         if ($validator->fails()) {
+    //             return $this->respondInvalidRequest($validator->errors());
+    //         }
+    //         $save = $this->vehicleStaffService->storeData($request, $id);
+    //         return true;
+    // }
+
+
     public function saveData(Request $request, $id)
     {
-        try {
-            $validator = $this->vehicleStaffService->storeValidate($request, $id);
 
-            if ($validator->fails()) {
-                return $this->respondInvalidRequest($validator->errors());
-            }
-
-            $this->my_connection->beginTransaction();
-
-            $save = $this->vehicleStaffService->storeData($request, $id);
-            $this->my_connection->commit();
-            return true;
-        } catch (\Exception $e) {
-            $this->my_connection->rollBack();
-            return false;
+        $validator = $this->vehicleStaffService->storeValidate($request, $id);
+        if ($validator->fails()) {
+            return $this->respondInvalidRequest($validator->errors());
         }
+
+            $photo = $request->file('photo');
+            if ($photo) {
+                $imgName = date("Ymd_His");
+                $ext = strtolower($photo->getClientOriginalExtension());
+                $fullName = $imgName . '.' . $ext;
+                $uploadPath = 'public/uploads/driver/';
+                $uploadTo = $photo->move($uploadPath, $fullName);
+                $vehicle_staff->staff_image = $fullName;
+                if ($id > 0) {
+                    $image_path = $uploadPath . $oldImg;
+                    if (File::exists($image_path) && $oldImg != null) {
+                        File::delete($image_path);
+                    }
+                }
+            }
+            $vehicle_staff = new VehicleStaff;
+            $vehicle_staff->customer_id = auth()->user()->id;
+            $vehicle_staff->staff_id = $request->staff_id;
+            $vehicle_staff->staff_name = $request->staff_name;
+            $vehicle_staff->staff_type = $request->staff_type?:0;
+            $vehicle_staff->father_name = $request->father_name;
+            $vehicle_staff->mother_name = $request->mother_name;
+            $vehicle_staff->phone = $request->phone;
+            $vehicle_staff->contact_one = $request->contact_one;
+            $vehicle_staff->contact_two = $request->contact_two;
+            $vehicle_staff->email = $request->email;
+            $vehicle_staff->date_of_birth = $request->date_of_birth;
+            $vehicle_staff->nid_no = $request->nid_no;
+            $vehicle_staff->present_address = $request->present_address;
+            $vehicle_staff->permanent_address = $request->permanent_address;
+            $vehicle_staff->staff_type = $request->staff_type;
+            $vehicle_staff->driving_licence = $request->driving_licence;
+            $vehicle_staff->work_experience = $request->work_experience;
+            $vehicle_staff->previous_organisation = $request->previous_organisation;
+            $vehicle_staff->assigned_vehicle = $request->assigned_vehicle;
+            $vehicle_staff->assigned_date = $request->assigned_date;
+            $vehicle_staff->status = $request->status;
+            $vehicle_staff->save();
+            return true;
     }
+
+
 
     /**
      * Display the specified resource.
@@ -121,7 +163,7 @@ class VehicleStaffController extends Controller
 
     public function VehicleStaffInfo($id)
     {
-        dd("VehicleStaffInfo call");
+  
 
         $findVehicleStaff = $this->my_connection->select("select v.vehicle_staff_pid, vs.* from vehicles v left join vehicle_staff d on vs.id = v.vehicle_staff_pid where v.object_id =" . $id);
         if ($findVehicleStaff != null) {

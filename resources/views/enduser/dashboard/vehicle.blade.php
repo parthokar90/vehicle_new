@@ -90,7 +90,7 @@
                     </h3>
                 </div>
                 <div class="kt-portlet__head-toolbar">
-                    <a href="javascript:;" id="addNewVehicle" class="btn btn-success btn-sm"><i
+                    <a href="{{ url('dashboard/d/vehicle_add')}}" id="addNewVehicle" class="btn btn-success btn-sm"><i
                             class="la la-plus mr-2"></i>Add Vehicle</a>
 
                 </div>

@@ -141,7 +141,8 @@
                             <label class="col-lg-3 col-form-label">Staff Type</label>
                             <div class="col-lg-7">
                                 <select name="staff_type" class="form-control kt-select2-2" id="staff_type_selector">
-                                    {{generate_simple_dropdown('master_settings','name', 'type=17')}}
+                                   <option value="1">Staff</option>
+                                   <option value="1">Staff2</option>
                                 </select>
                                 <small id="staff_type-error" class="text-danger"></small>
                             </div>
