@@ -118,7 +118,8 @@ class VehicleStaffController extends Controller
                 }
             }
             $vehicle_staff = new VehicleStaff;
-            $vehicle_staff->customer_id = auth()->user()->id;
+            $vehicle_staff->customer_id = auth()->user()->id
+            ;
             $vehicle_staff->staff_id = $request->staff_id;
             $vehicle_staff->staff_name = $request->staff_name;
             $vehicle_staff->staff_type = $request->staff_type?:0;

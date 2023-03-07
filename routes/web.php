@@ -57,6 +57,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:system_admin']], fu
     // Depertment
     Route::resource('department', 'DepertmentController');
 
+
     // User
     Route::resource('user', 'UserController');
     Route::post('userUpdate/{id}', 'UserController@update');
@@ -115,6 +116,15 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:system_admin']], fu
 //enduser routing section------------------
 
 Route::group(['namespace' => 'Enduser', 'middleware' => 'auth:admin'], function () {
+
+
+    Route::get('sms/settings', 'SmsController@index')->name('sms_settings_index');
+    Route::get('sms/settings/create', 'SmsController@create')->name('sms.settings.create');
+    Route::post('sms/settings/store', 'SmsController@store')->name('sms.settings.store');
+    Route::get('sms/settings/edit/{id}', 'SmsController@edit')->name('sms.settings.edit');
+    Route::PUT('sms/settings/update/{id}', 'SmsController@update')->name('sms.settings.update');
+
+
 
     Route::get('dashboard/p/', 'ProfileController@profile')->name('enduser.profile');
     Route::get('dashboard/p/{pages}/{dataTab?}', 'ProfileController@profilePage');

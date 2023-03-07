@@ -851,11 +851,11 @@
                                 </a>
                             </li> -->
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('dashboard/setting/localization')}}" class="kt-menu__link  vms_menu_item" id="localization" data-rel="localization">
+                                <a href="{{ route('sms_settings_index')}}" class="kt-menu__link  vms_menu_item" id="localization" data-rel="localization">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>
-                                    <span class="kt-menu__link-text">Sms</span>
+                                    <span class="kt-menu__link-text">Sms Settings</span>
                                 </a>
                             </li>
                             <!-- <li class="kt-menu__item " aria-haspopup="true">
