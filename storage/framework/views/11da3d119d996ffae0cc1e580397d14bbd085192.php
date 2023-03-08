@@ -16,12 +16,12 @@
             <label for="group" class="col-lg-3 col-form-label">Sms Receiver</label>
             <div class="col-lg-9">
                 <select name="receiver" class="form-control kt-select2-2">
-                    <option value="Client" <?php if($user->Client=='Client'): ?> selected <?php endif; ?>>Client</option>
-                    <option value="Trip" <?php if($user->Trip=='Trip'): ?> selected <?php endif; ?>>Trip</option>
-                    <option value="Vehicle" <?php if($user->Vehicle=='Vehicle'): ?> selected <?php endif; ?>>Vehicle</option>
-                    <option value="Driver" <?php if($user->Driver=='Driver'): ?> selected <?php endif; ?>>Driver</option>
-                    <option value="Supplier" <?php if($user->Supplier=='Supplier'): ?> selected <?php endif; ?>>Supplier</option>
-                    <option value="User" <?php if($user->User=='User'): ?> selected <?php endif; ?>>User</option>
+                    <option value="Client" <?php if($user->receiver=='Client'): ?> selected <?php endif; ?>>Client</option>
+                    <option value="Trip" <?php if($user->receiver=='Trip'): ?> selected <?php endif; ?>>Trip</option>
+                    <option value="Vehicle" <?php if($user->receiver=='Vehicle'): ?> selected <?php endif; ?>>Vehicle</option>
+                    <option value="Driver" <?php if($user->receiver=='Driver'): ?> selected <?php endif; ?>>Driver</option>
+                    <option value="Supplier" <?php if($user->receiver=='Supplier'): ?> selected <?php endif; ?>>Supplier</option>
+                    <option value="User" <?php if($user->receiver=='User'): ?> selected <?php endif; ?>>User</option>
                 </select>
                 <small id="parent_id-error" class="text-danger" for="parent_id"></small>
             </div>
@@ -83,7 +83,7 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "<?php echo e(route('template-s.update', '')); ?>/"+id,
+            url: "<?php echo e(url('template-update', '')); ?>/"+id,
             data: new FormData(this),
             contentType: false,
             cache: false,

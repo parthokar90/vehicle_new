@@ -15,12 +15,12 @@
             <label for="group" class="col-lg-3 col-form-label">Sms Receiver</label>
             <div class="col-lg-9">
                 <select name="receiver" class="form-control kt-select2-2">
-                    <option value="Client" @if($user->Client=='Client') selected @endif>Client</option>
-                    <option value="Trip" @if($user->Trip=='Trip') selected @endif>Trip</option>
-                    <option value="Vehicle" @if($user->Vehicle=='Vehicle') selected @endif>Vehicle</option>
-                    <option value="Driver" @if($user->Driver=='Driver') selected @endif>Driver</option>
-                    <option value="Supplier" @if($user->Supplier=='Supplier') selected @endif>Supplier</option>
-                    <option value="User" @if($user->User=='User') selected @endif>User</option>
+                    <option value="Client" @if($user->receiver=='Client') selected @endif>Client</option>
+                    <option value="Trip" @if($user->receiver=='Trip') selected @endif>Trip</option>
+                    <option value="Vehicle" @if($user->receiver=='Vehicle') selected @endif>Vehicle</option>
+                    <option value="Driver" @if($user->receiver=='Driver') selected @endif>Driver</option>
+                    <option value="Supplier" @if($user->receiver=='Supplier') selected @endif>Supplier</option>
+                    <option value="User" @if($user->receiver=='User') selected @endif>User</option>
                 </select>
                 <small id="parent_id-error" class="text-danger" for="parent_id"></small>
             </div>
@@ -82,7 +82,7 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "{{ route('template-s.update', '') }}/"+id,
+            url: "{{ url('template-update', '') }}/"+id,
             data: new FormData(this),
             contentType: false,
             cache: false,

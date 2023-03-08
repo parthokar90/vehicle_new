@@ -90,7 +90,7 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('template-s.index') }}",
+                url: "{{ url('template-index') }}",
                 data: function (d) {
                     d._token = '{!! csrf_token() !!}';
                 }
@@ -159,7 +159,7 @@
             e.preventDefault();
 
             $.ajax({
-                url: "{{route('template-s.create')}}",
+                url: "{{url('template-create')}}",
                 type: "GET",
                 success: function (data) {    
                     $('#load_modal_content').html(data);
@@ -174,7 +174,7 @@
 
     function edit_data(id){
         $.ajax({
-            url: "{{route('template-s.index')}}/"+id+"/edit",
+            url: "{{url('/template/edit/')}}"+"/"+id,
             type: "GET",
 
             success: function (data) {    

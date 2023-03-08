@@ -71,7 +71,7 @@ class SmsTemplateController extends Controller
             'template'=> $request->template,
         ]);
     
-        return redirect()->route('template-s.index')
+        return redirect()->route('temp.index')
                         ->with('success','Template created successfully');
     }
     
@@ -125,7 +125,7 @@ class SmsTemplateController extends Controller
             'template'=> $request->template,
         ]);
 
-        return redirect()->route('template-s.index')
+        return redirect()->route('temp.index')
                         ->with('success','Template updated successfully');
     }
     

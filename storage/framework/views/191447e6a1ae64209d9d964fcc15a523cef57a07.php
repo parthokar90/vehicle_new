@@ -859,7 +859,7 @@
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="<?php echo e(route('category-s.index')); ?>" class="kt-menu__link  vms_menu_item" id="localization" data-rel="localization">
+                                <a href="<?php echo e(url('category-index')); ?>" class="kt-menu__link  vms_menu_item" id="localization" data-rel="localization">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>
@@ -867,7 +867,7 @@
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="<?php echo e(route('template-s.index')); ?>" class="kt-menu__link  vms_menu_item" id="localization" data-rel="localization">
+                                <a href="<?php echo e(url('template-index')); ?>" class="kt-menu__link  vms_menu_item" id="localization" data-rel="localization">
                                     <span class="kt-menu__link-icon">
                                         <i class="fas fa-car"></i>
                                     </span>

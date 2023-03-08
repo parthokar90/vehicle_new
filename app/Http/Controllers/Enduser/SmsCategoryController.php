@@ -65,7 +65,7 @@ class SmsCategoryController extends Controller
             'category_name'=> $request->category_name,
         ]);
     
-        return redirect()->route('category-s.index')
+        return redirect()->route('cat.index')
                         ->with('success','Category created successfully');
     }
     
@@ -112,7 +112,7 @@ class SmsCategoryController extends Controller
             'category_name'=> $request->category_name,
         ]);
 
-        return redirect()->route('category-s.index')
+        return redirect()->route('cat.index')
                         ->with('success','Category updated successfully');
     }
     

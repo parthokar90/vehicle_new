@@ -16,12 +16,12 @@
             <label for="group" class="col-lg-3 col-form-label">Sms Receiver</label>
             <div class="col-lg-9">
                 <select name="sms_receiver" class="form-control kt-select2-2">
-                   <option value="Client" <?php if($data->Client=='Client'): ?> selected <?php endif; ?>>Client</option>
-                    <option value="Trip" <?php if($data->Trip=='Trip'): ?> selected <?php endif; ?>>Trip</option>
-                    <option value="Vehicle" <?php if($data->Vehicle=='Vehicle'): ?> selected <?php endif; ?>>Vehicle</option>
-                    <option value="Driver" <?php if($data->Driver=='Driver'): ?> selected <?php endif; ?>>Driver</option>
-                    <option value="Supplier" <?php if($data->Supplier=='Supplier'): ?> selected <?php endif; ?>>Supplier</option>
-                    <option value="User" <?php if($user->User=='User'): ?> selected <?php endif; ?>>User</option>
+                   <option value="Client" <?php if($data->sms_receiver=='Client'): ?> selected <?php endif; ?>>Client</option>
+                    <option value="Trip" <?php if($data->sms_receiver=='Trip'): ?> selected <?php endif; ?>>Trip</option>
+                    <option value="Vehicle" <?php if($data->sms_receiver=='Vehicle'): ?> selected <?php endif; ?>>Vehicle</option>
+                    <option value="Driver" <?php if($data->sms_receiver=='Driver'): ?> selected <?php endif; ?>>Driver</option>
+                    <option value="Supplier" <?php if($data->sms_receiver=='Supplier'): ?> selected <?php endif; ?>>Supplier</option>
+                    <option value="User" <?php if($data->sms_receiver=='User'): ?> selected <?php endif; ?>>User</option>
                 </select>
                 <small id="parent_id-error" class="text-danger" for="parent_id"></small>
             </div>
@@ -55,7 +55,7 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "<?php echo e(route('category-s.update', '')); ?>/"+id,
+            url: "<?php echo e(url('category-update', '')); ?>/"+id,
             data: new FormData(this),
             contentType: false,
             cache: false,

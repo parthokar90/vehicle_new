@@ -126,8 +126,18 @@ Route::group(['namespace' => 'Enduser', 'middleware' => 'auth:admin'], function 
 
 
 
-    Route::resource('category-s', 'SmsCategoryController');
-    Route::resource('template-s', 'SmsTemplateController');
+    Route::get('category-index', 'SmsCategoryController@index')->name('cat.index');
+    Route::get('category-create', 'SmsCategoryController@create');
+    Route::post('category-store', 'SmsCategoryController@store');
+    Route::get('/category/edit/{id}', 'SmsCategoryController@edit');
+    Route::PUT('category-update/{id}', 'SmsCategoryController@update');
+
+    
+    Route::get('template-index', 'SmsTemplateController@index')->name('temp.index');
+    Route::get('template-create', 'SmsTemplateController@create');
+    Route::post('template-store', 'SmsTemplateController@store');
+    Route::get('/template/edit/{id}', 'SmsTemplateController@edit');
+    Route::PUT('template-update/{id}', 'SmsTemplateController@update');
 
 
 

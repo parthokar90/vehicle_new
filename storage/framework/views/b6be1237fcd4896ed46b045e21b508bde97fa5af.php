@@ -90,7 +90,7 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "<?php echo e(route('template-s.index')); ?>",
+                url: "<?php echo e(url('template-index')); ?>",
                 data: function (d) {
                     d._token = '<?php echo csrf_token(); ?>';
                 }
@@ -159,7 +159,7 @@
             e.preventDefault();
 
             $.ajax({
-                url: "<?php echo e(route('template-s.create')); ?>",
+                url: "<?php echo e(url('template-create')); ?>",
                 type: "GET",
                 success: function (data) {    
                     $('#load_modal_content').html(data);
@@ -174,7 +174,7 @@
 
     function edit_data(id){
         $.ajax({
-            url: "<?php echo e(route('template-s.index')); ?>/"+id+"/edit",
+            url: "<?php echo e(url('/template/edit/')); ?>"+"/"+id,
             type: "GET",
 
             success: function (data) {    
