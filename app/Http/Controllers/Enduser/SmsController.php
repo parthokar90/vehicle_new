@@ -18,11 +18,9 @@ class SmsController extends Controller
                     $data = DB::table('sms_settings')->orderBy('id','DESC')->get();
                     return Datatables::of($data)
                         ->addIndexColumn()
-                        ->addColumn('action', function ($row) {
-                            $id = $row->id;
-                            return "
-                            <a style='  class='custom-button-class mr-2'  href='route('sms.settings.edit',$row->id)'><i style='color:orange' class='fas fa-edit'></i></a>
-                           ";
+                        ->addColumn('action', function($row){
+                            $btn = '<a title="Edit" href="'.route('sms.settings.edit',$row->id).'"> <i style="color:orange" class="fa fa-edit"></i></a> ';
+                            return $btn;
                         })
                         ->rawColumns(['action'])
                         ->make(true);
@@ -45,7 +43,7 @@ class SmsController extends Controller
     
         $input = [
             'provider_name'=> $request->provider_name,
-            'user_id'=> auth()->user()->id,
+            'user_id'=> $request->user_id,
             'password'=> $request->password,
             'status'=> $request->status,
         ];
@@ -54,5 +52,32 @@ class SmsController extends Controller
     
         return redirect()->route('sms_settings_index')
                         ->with('success','Sms Settings created successfully');
+    }
+
+       public function update(Request $request,$id){
+        $this->validate($request, [
+            'provider_name' => 'required',
+            'password' => 'required',
+            'status' => 'required',
+        ]);
+    
+        $input = [
+            'provider_name'=> $request->provider_name,
+            'user_id'=> $request->user_id,
+            'password'=> $request->password,
+            'status'=> $request->status,
+        ];
+
+        $user = DB::table('sms_settings')->where('id',$id)->update($input);
+    
+        return redirect()->route('sms_settings_index')
+                        ->with('success','Sms Settings updated successfully');
+    }
+
+
+    public function edit($id)
+    {
+        $user = DB::table('sms_settings')->where('id',$id)->first();
+        return view('enduser.settings.sms.edit',compact('user'));
     }
 }

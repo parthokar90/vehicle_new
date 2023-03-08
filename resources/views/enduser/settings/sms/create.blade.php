@@ -51,6 +51,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label">User Id  </label>
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" name="user_id"
+                                    placeholder="User id" value="">
+                                    @error('user_id')
+                                      <small id="system_email-error" class="text-danger">{{ $message }}</small>
+                                    @enderror
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label">Password  </label>
@@ -85,7 +96,7 @@
                         <div class="col-lg-2"> </div>
                         <div class="col-lg-8">
                             <div class="form-button">
-                                <button  type="reset" class="btn btn-danger btn-sm" id="testEmail">Cancel</button>
+                                <button  type="reset" class="btn btn-primary btn-sm" id="testEmail">Test Sms</button>
                                 <button type="submit" class="btn btn-success btn-sm float-right">Save Changes</button>
                             </div>
                         </div>

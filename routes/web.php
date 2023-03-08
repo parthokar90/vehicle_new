@@ -125,6 +125,9 @@ Route::group(['namespace' => 'Enduser', 'middleware' => 'auth:admin'], function 
     Route::PUT('sms/settings/update/{id}', 'SmsController@update')->name('sms.settings.update');
 
 
+   
+
+
 
     Route::get('dashboard/p/', 'ProfileController@profile')->name('enduser.profile');
     Route::get('dashboard/p/{pages}/{dataTab?}', 'ProfileController@profilePage');
