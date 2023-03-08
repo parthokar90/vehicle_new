@@ -125,6 +125,13 @@ Route::group(['namespace' => 'Enduser', 'middleware' => 'auth:admin'], function 
     Route::PUT('sms/settings/update/{id}', 'SmsController@update')->name('sms.settings.update');
 
 
+
+    Route::resource('category-s', 'SmsCategoryController');
+    Route::resource('template-s', 'SmsTemplateController');
+
+
+
+
    
 
 
