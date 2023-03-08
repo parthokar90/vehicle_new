@@ -14,7 +14,12 @@
             <label for="group" class="col-lg-3 col-form-label">Sms Receiver</label>
             <div class="col-lg-9">
                 <select name="sms_receiver" class="form-control kt-select2-2">
-                    <option value="Sms Receiver">Sms Receiver</option>
+                    <option value="Client">Client</option>
+                    <option value="Trip">Trip</option>
+                    <option value="Vehicle">Vehicle</option>
+                    <option value="Driver">Driver</option>
+                    <option value="Supplier">Supplier</option>
+                    <option value="User">User</option>
                 </select>
                 <small id="parent_id-error" class="text-danger" for="parent_id"></small>
             </div>

@@ -11,12 +11,17 @@
     <?php echo e(method_field('PUT')); ?>
 
            <!-- Form content start -->
-           <input type="hidden" id="id" value="<?php echo e($user->id); ?>">
+           <input type="hidden" id="id" value="<?php echo e($data->id); ?>">
            <div class=" row form-group">
             <label for="group" class="col-lg-3 col-form-label">Sms Receiver</label>
             <div class="col-lg-9">
                 <select name="sms_receiver" class="form-control kt-select2-2">
-                    <option value="Test receiver">Sms Receiver</option>
+                   <option value="Client" <?php if($data->Client=='Client'): ?> selected <?php endif; ?>>Client</option>
+                    <option value="Trip" <?php if($data->Trip=='Trip'): ?> selected <?php endif; ?>>Trip</option>
+                    <option value="Vehicle" <?php if($data->Vehicle=='Vehicle'): ?> selected <?php endif; ?>>Vehicle</option>
+                    <option value="Driver" <?php if($data->Driver=='Driver'): ?> selected <?php endif; ?>>Driver</option>
+                    <option value="Supplier" <?php if($data->Supplier=='Supplier'): ?> selected <?php endif; ?>>Supplier</option>
+                    <option value="User" <?php if($user->User=='User'): ?> selected <?php endif; ?>>User</option>
                 </select>
                 <small id="parent_id-error" class="text-danger" for="parent_id"></small>
             </div>
@@ -25,7 +30,7 @@
         <div class=" row form-group">
             <label for="name" class="col-lg-3 col-form-label">Category Name </label>
             <div class="col-lg-9">
-                <input type="text" class="form-control" name="category_name" value="<?php echo e($user->category_name); ?>">
+                <input type="text" class="form-control" name="category_name" value="<?php echo e($data->category_name); ?>">
                 <small id="name-error" class="text-danger" for="name"></small>
             </div>
         </div>

@@ -41,14 +41,14 @@ class SmsController extends Controller
             'status' => 'required',
         ]);
     
-        $input = [
+  
+
+        DB::table('sms_settings')->insert([
             'provider_name'=> $request->provider_name,
             'user_id'=> $request->user_id,
             'password'=> $request->password,
             'status'=> $request->status,
-        ];
-
-        $user = DB::table('sms_settings')->insert($input);
+        ]);
     
         return redirect()->route('sms_settings_index')
                         ->with('success','Sms Settings created successfully');

@@ -58,13 +58,12 @@ class SmsCategoryController extends Controller
             'sms_receiver' => 'required',
             'category_name' => 'required',
         ]);
-    
-        $input = [
+
+
+        DB::table('sms_category')->insert([
             'sms_receiver'=> $request->sms_receiver,
             'category_name'=> $request->category_name,
-        ];
-
-        $user = DB::table('sms_category')->insert($input);
+        ]);
     
         return redirect()->route('category-s.index')
                         ->with('success','Category created successfully');
@@ -90,8 +89,8 @@ class SmsCategoryController extends Controller
      */
     public function edit($id)
     {
-        $user = DB::table('sms_category')->where('id',$id)->first();
-        return view('enduser.settings.category.edit',compact('user'));
+        $data = DB::table('sms_category')->where('id',$id)->first();
+        return view('enduser.settings.category.edit',compact('data'));
     }
     
     /**

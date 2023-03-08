@@ -14,7 +14,7 @@
                     <a href="{{url('/')}}" class="kt-subheader__breadcrumbs-home">
                         <i class="flaticon2-shelter"></i>
                     </a>
-                    <a href="" class="kt-subheader__breadcrumbs-link">Sms Category</a>
+                    <a href="" class="kt-subheader__breadcrumbs-link">Sms Template</a>
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
                 <div class="kt-portlet__head-label">
                    
                     <h3 class="kt-portlet__head-title">
-                    Sms Category List
+                    Sms Template List
                     </h3>
                 </div>
                 <div class="kt-portlet__head-toolbar">
@@ -54,6 +54,9 @@
                             <th width="25px">SL</th>
                             <th>Category Name</th>
                             <th>Receiver</th>
+                            <th>Type</th>
+                            <th>Title</th>
+                            <th>Template</th>
                             <th width="70px">Actions</th>
                         </tr>
                     </thead>
@@ -87,15 +90,18 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('category-s.index') }}",
+                url: "{{ route('template-s.index') }}",
                 data: function (d) {
                     d._token = '{!! csrf_token() !!}';
                 }
             },
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'text-center'},
-                {data: 'category_name', name: 'category_name'},
-                {data: 'sms_receiver', name: 'sms_receiver'},
+                {data: 'category', name: 'category'},
+                {data: 'receiver', name: 'receiver'},
+                {data: 'types', name: 'types'},
+                {data: 'title', name: 'title'},
+                {data: 'template', name: 'template'},
                 {data: 'action', name: 'action', className: 'text-center', orderable: false, searchable: false},
             ],
             
@@ -153,7 +159,7 @@
             e.preventDefault();
 
             $.ajax({
-                url: "{{route('category-s.create')}}",
+                url: "{{route('template-s.create')}}",
                 type: "GET",
                 success: function (data) {    
                     $('#load_modal_content').html(data);
@@ -168,7 +174,7 @@
 
     function edit_data(id){
         $.ajax({
-            url: "{{route('category-s.index')}}/"+id+"/edit",
+            url: "{{route('template-s.index')}}/"+id+"/edit",
             type: "GET",
 
             success: function (data) {    

@@ -42,8 +42,8 @@ class SmsTemplateController extends Controller
      */
     public function create()
     {
-
-        return view('enduser.settings.template.create');
+        $data=DB::table('sms_category')->select('category_name')->get();
+        return view('enduser.settings.template.create',compact('data'));
     }
     
     /**
@@ -61,16 +61,15 @@ class SmsTemplateController extends Controller
             'title' => 'required',
             'template' => 'required',
         ]);
-    
-        $input = [
+
+
+        DB::table('sms_template')->insert([
             'receiver'=> $request->receiver,
             'category'=> $request->category,
             'types'=> $request->types,
             'title'=> $request->title,
             'template'=> $request->template,
-        ];
-
-        $user = DB::table('sms_template')->insert($input);
+        ]);
     
         return redirect()->route('template-s.index')
                         ->with('success','Template created successfully');
@@ -96,8 +95,9 @@ class SmsTemplateController extends Controller
      */
     public function edit($id)
     {
-        $user = DB::table('sms_category')->where('id',$id)->first();
-        return view('enduser.settings.category.edit',compact('user'));
+        $user = DB::table('sms_template')->where('id',$id)->first();
+        $data=DB::table('sms_category')->select('category_name')->get();
+        return view('enduser.settings.template.edit',compact('user','data'));
     }
     
     /**

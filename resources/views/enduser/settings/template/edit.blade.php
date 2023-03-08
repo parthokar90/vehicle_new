@@ -14,8 +14,13 @@
            <div class=" row form-group">
             <label for="group" class="col-lg-3 col-form-label">Sms Receiver</label>
             <div class="col-lg-9">
-                <select name="sms_receiver" class="form-control kt-select2-2">
-                    <option value="Test receiver">Sms Receiver</option>
+                <select name="receiver" class="form-control kt-select2-2">
+                    <option value="Client" @if($user->Client=='Client') selected @endif>Client</option>
+                    <option value="Trip" @if($user->Trip=='Trip') selected @endif>Trip</option>
+                    <option value="Vehicle" @if($user->Vehicle=='Vehicle') selected @endif>Vehicle</option>
+                    <option value="Driver" @if($user->Driver=='Driver') selected @endif>Driver</option>
+                    <option value="Supplier" @if($user->Supplier=='Supplier') selected @endif>Supplier</option>
+                    <option value="User" @if($user->User=='User') selected @endif>User</option>
                 </select>
                 <small id="parent_id-error" class="text-danger" for="parent_id"></small>
             </div>
@@ -24,7 +29,35 @@
         <div class=" row form-group">
             <label for="name" class="col-lg-3 col-form-label">Category Name </label>
             <div class="col-lg-9">
-                <input type="text" class="form-control" name="category_name" value="{{$user->category_name}}">
+            <select name="category" class="form-control kt-select2-2">
+                   @foreach($data as $item)
+                    <option value="{{$item->category_name}}" @if($user->category==$item->category_name) selected @endif>{{$item->category_name}}</option>
+                    @endforeach
+                </select>
+                <small id="name-error" class="text-danger" for="name"></small>
+            </div>
+        </div>
+
+        <div class=" row form-group">
+            <label for="name" class="col-lg-3 col-form-label">Type </label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" name="types" value="{{$user->types}}">
+                <small id="name-error" class="text-danger" for="name"></small>
+            </div>
+        </div>
+
+        <div class=" row form-group">
+            <label for="name" class="col-lg-3 col-form-label">Title </label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" name="title" value="{{$user->title}}">
+                <small id="name-error" class="text-danger" for="name"></small>
+            </div>
+        </div>
+
+        <div class=" row form-group">
+            <label for="name" class="col-lg-3 col-form-label">Template </label>
+            <div class="col-lg-9">
+                <textarea rows="5" cols="5" class="form-control" name="template">{{$user->template}}</textarea>
                 <small id="name-error" class="text-danger" for="name"></small>
             </div>
         </div>
@@ -49,13 +82,13 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "{{ route('category-s.update', '') }}/"+id,
+            url: "{{ route('template-s.update', '') }}/"+id,
             data: new FormData(this),
             contentType: false,
             cache: false,
             processData: false,
             success: function(response) {
-                successMsg('Category updated successfully.');
+                successMsg('Template updated successfully.');
                 $('#userModal').modal('hide');
                 $('#user_table').DataTable().ajax.reload(null, false);
             },

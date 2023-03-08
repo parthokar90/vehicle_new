@@ -13,8 +13,13 @@
         <div class=" row form-group">
             <label for="group" class="col-lg-3 col-form-label">Sms Receiver</label>
             <div class="col-lg-9">
-                <select name="sms_receiver" class="form-control kt-select2-2">
-                    <option value="Sms Receiver">Sms Receiver</option>
+                <select name="receiver" class="form-control kt-select2-2">
+                <option value="Client">Client</option>
+                    <option value="Trip">Trip</option>
+                    <option value="Vehicle">Vehicle</option>
+                    <option value="Driver">Driver</option>
+                    <option value="Supplier">Supplier</option>
+                    <option value="User">User</option>
                 </select>
                 <small id="parent_id-error" class="text-danger" for="parent_id"></small>
             </div>
@@ -23,7 +28,35 @@
         <div class=" row form-group">
             <label for="name" class="col-lg-3 col-form-label">Category Name </label>
             <div class="col-lg-9">
-                <input type="text" class="form-control" name="category_name">
+            <select name="category" class="form-control kt-select2-2">
+                   @foreach($data as $item)
+                    <option value="{{$item->category_name}}">{{$item->category_name}}</option>
+                    @endforeach
+                </select>
+                <small id="name-error" class="text-danger" for="name"></small>
+            </div>
+        </div>
+
+        <div class=" row form-group">
+            <label for="name" class="col-lg-3 col-form-label">Type </label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" name="types">
+                <small id="name-error" class="text-danger" for="name"></small>
+            </div>
+        </div>
+
+        <div class=" row form-group">
+            <label for="name" class="col-lg-3 col-form-label">Title </label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" name="title">
+                <small id="name-error" class="text-danger" for="name"></small>
+            </div>
+        </div>
+
+        <div class=" row form-group">
+            <label for="name" class="col-lg-3 col-form-label">Template </label>
+            <div class="col-lg-9">
+                <textarea rows="5" cols="5" class="form-control" name="template"></textarea>
                 <small id="name-error" class="text-danger" for="name"></small>
             </div>
         </div>
@@ -58,13 +91,13 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "{{ route('category-s.store') }}",
+            url: "{{ route('template-s.store') }}",
             data: new FormData(this),
             contentType: false,
             cache: false,
             processData: false,
             success: function(response) {
-                successMsg('Category created successfully.');
+                successMsg('Template created successfully.');
                 $('#user_table').DataTable().ajax.reload();
                 $('#userModal').modal('hide');
             },

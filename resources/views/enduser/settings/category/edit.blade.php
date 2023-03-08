@@ -10,12 +10,17 @@
         @csrf
     {{ method_field('PUT') }}
            <!-- Form content start -->
-           <input type="hidden" id="id" value="{{$user->id}}">
+           <input type="hidden" id="id" value="{{$data->id}}">
            <div class=" row form-group">
             <label for="group" class="col-lg-3 col-form-label">Sms Receiver</label>
             <div class="col-lg-9">
                 <select name="sms_receiver" class="form-control kt-select2-2">
-                    <option value="Test receiver">Sms Receiver</option>
+                   <option value="Client" @if($data->Client=='Client') selected @endif>Client</option>
+                    <option value="Trip" @if($data->Trip=='Trip') selected @endif>Trip</option>
+                    <option value="Vehicle" @if($data->Vehicle=='Vehicle') selected @endif>Vehicle</option>
+                    <option value="Driver" @if($data->Driver=='Driver') selected @endif>Driver</option>
+                    <option value="Supplier" @if($data->Supplier=='Supplier') selected @endif>Supplier</option>
+                    <option value="User" @if($user->User=='User') selected @endif>User</option>
                 </select>
                 <small id="parent_id-error" class="text-danger" for="parent_id"></small>
             </div>
@@ -24,7 +29,7 @@
         <div class=" row form-group">
             <label for="name" class="col-lg-3 col-form-label">Category Name </label>
             <div class="col-lg-9">
-                <input type="text" class="form-control" name="category_name" value="{{$user->category_name}}">
+                <input type="text" class="form-control" name="category_name" value="{{$data->category_name}}">
                 <small id="name-error" class="text-danger" for="name"></small>
             </div>
         </div>
