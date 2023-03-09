@@ -63,7 +63,7 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "{{ route('category-store') }}",
+            url: "{{ url('category-store') }}",
             data: new FormData(this),
             contentType: false,
             cache: false,
