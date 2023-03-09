@@ -63,11 +63,11 @@ class SmsTemplateController extends Controller
         ]);
 
         $existingData = DB::table('sms_template')::
-                 where('receiver',$request->receiver )
-                 ->where('category',$request->category )
-                 ->where('types',$request->types )
-                 ->where('title', $request->title)
-                ->where('template', $request->template)
+                 where('receiver',$request->receiver)
+                 ->where('category',$request->category)
+                 ->where('types',$request->types)
+                 ->where('title',$request->title)
+                ->where('template',$request->template)
                 ->count();
 
         if ($existingData==0) {
