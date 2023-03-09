@@ -60,8 +60,8 @@ class SmsCategoryController extends Controller
         ]);
 
       $existingData = DB::table('sms_category')::
-                 where('sms_receiver',$request->sms_receiver )
-                 ->where('category_name',$request->category_name )
+                 where('sms_receiver',$request->sms_receiver)
+                 ->where('category_name',$request->category_name)
                 ->count();
         if($existingData==0){
             DB::table('sms_category')->insert([
