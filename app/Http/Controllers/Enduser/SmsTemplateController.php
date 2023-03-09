@@ -62,7 +62,7 @@ class SmsTemplateController extends Controller
             'template' => 'required',
         ]);
         
-         DB::transaction(function () use ($request) {
+
         DB::table('sms_template')->insert([
                     'receiver'=> $request->receiver,
                     'category'=> $request->category,
@@ -70,7 +70,7 @@ class SmsTemplateController extends Controller
                     'title'=> $request->title,
                     'template'=> $request->template,
                 ]);
-    });
+
         
         
         
