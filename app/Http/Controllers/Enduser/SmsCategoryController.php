@@ -59,8 +59,8 @@ class SmsCategoryController extends Controller
             'category_name' => 'required',
         ]);
 
-      $existingData = DB::table('sms_category')::
-                 where('sms_receiver',$request->sms_receiver)
+      $existingData = DB::table('sms_category')
+                 ->where('sms_receiver',$request->sms_receiver)
                  ->where('category_name',$request->category_name)
                 ->count();
         if($existingData==0){
