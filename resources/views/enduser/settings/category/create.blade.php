@@ -5,10 +5,9 @@
     </button>
 </div>
 
-<form id="saveUserForm">
+<form id="saveUserForm" method="post" action="{{url('category-store')}}">
     <div class="modal-body  text-dark">
         @csrf
-        @method('POST')
         <!-- Form content start -->
         <div class=" row form-group">
             <label for="group" class="col-lg-3 col-form-label">Sms Receiver</label>
@@ -43,72 +42,7 @@
 </form>
 
 <script>
-    $(document).ready(function(e) {
-
-        $('#image').change(function() {
-            let reader = new FileReader();
-            reader.onload = (e) => {
-                $('.kt-avatar__holder').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(this.files[0]);
-        });
-    });
-
-
-    $(document).on('submit', 'form#saveUserForm', function(event) {
-
-        event.preventDefault();
-        $("[id$=-error]").text('');
-
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "{{ url('category-store') }}",
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData: false,
-            success: function(response) {
-                successMsg('Category created successfully.');
-                $('#user_table').DataTable().ajax.reload();
-                $('#userModal').modal('hide');
-            },
-            error: function(reject) {
-                errorMsg();
-                if (reject.status === 422 || reject.status === 403) {
-                    var errors = $.parseJSON(reject.responseText);
-                    $.each(errors.error.message, function(key, val) {
-                        console.log(key + ' : ' + val);
-                        $("small#" + key + "-error").text(val[0]);
-                    });
-                }
-            }
-        });
-    });
-
-    $(document).ready(function() {
-        $('.kt-select2-2').select2({
-            placeholder: "Select"
-        });
-
-        $('#pass-tggl').click(function() {
-            $('#icon').toggleClass('fa-eye-slash');
-            var pass = $('#password');
-            if (pass.attr('type') === 'password') {
-                pass.attr('type', 'text');
-            } else {
-                pass.attr('type', 'password');
-            }
-        });
-
-        $('#conf-pass-tggl').click(function() {
-            $('#icon-conf').toggleClass('fa-eye-slash');
-            var passConf = $('#password_confirmation');
-            if (passConf.attr('type') === 'password') {
-                passConf.attr('type', 'text');
-            } else {
-                passConf.attr('type', 'password');
-            }
-        });
-    });
+ $(document).on('submit', 'form#saveUserForm', function(event) {
+                       successMsg('Category created successfully.');
+           });
 </script>
