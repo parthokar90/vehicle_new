@@ -62,8 +62,8 @@ class SmsTemplateController extends Controller
             'template' => 'required',
         ]);
 
-        $existingData = DB::table('sms_template')::
-                 where('receiver',$request->receiver)
+        $existingData = DB::table('sms_template')
+                 ->where('receiver',$request->receiver)
                  ->where('category',$request->category)
                  ->where('types',$request->types)
                  ->where('title',$request->title)
