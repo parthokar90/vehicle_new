@@ -59,16 +59,12 @@ class SmsCategoryController extends Controller
             'category_name' => 'required',
         ]);
 
-      $existingData = DB::table('sms_category')
-                 ->where('sms_receiver',$request->sms_receiver)
-                 ->where('category_name',$request->category_name)
-                ->count();
-        if($existingData==0){
+
             DB::table('sms_category')->insert([
             'sms_receiver'=> $request->sms_receiver,
             'category_name'=> $request->category_name,
             ]);
-        }
+        
         return redirect()->route('cat.index')
                         ->with('success','Category created successfully');
     }
