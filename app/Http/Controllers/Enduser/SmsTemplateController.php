@@ -62,15 +62,23 @@ class SmsTemplateController extends Controller
             'template' => 'required',
         ]);
 
+        $existingData = DB::table('sms_template')::
+                 where('receiver',$request->receiver )
+                 ->where('category',$request->category )
+                 ->where('types',$request->types )
+                 ->where('title', $request->title)
+                ->where('template', $request->template)
+                ->count();
 
-        DB::table('sms_template')->insert([
-            'receiver'=> $request->receiver,
-            'category'=> $request->category,
-            'types'=> $request->types,
-            'title'=> $request->title,
-            'template'=> $request->template,
-        ]);
-    
+        if ($existingData==0) {
+            DB::table('sms_template')->insert([
+                    'receiver'=> $request->receiver,
+                    'category'=> $request->category,
+                    'types'=> $request->types,
+                    'title'=> $request->title,
+                    'template'=> $request->template,
+                ]);
+        }
         return redirect()->route('temp.index')
                         ->with('success','Template created successfully');
     }
