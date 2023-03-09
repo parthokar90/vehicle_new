@@ -91,7 +91,7 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "{{ route('template-store') }}",
+            url: "{{ url('template-store') }}",
             data: new FormData(this),
             contentType: false,
             cache: false,
