@@ -70,10 +70,6 @@ class SmsTemplateController extends Controller
                     'title'=> $request->title,
                     'template'=> $request->template,
                 ]);
-
-        
-        
-        
         
         return redirect()->route('temp.index')
                         ->with('success','Template created successfully');
